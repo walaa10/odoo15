@@ -1,0 +1,10 @@
+<odoo>
+    <record id="product_point_report" model="ir.actions.report">
+      <field name="name">Product Points</field>
+      <field name="model">product.points</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">product_points.product_point_report_template</field>
+      <field name="report_file">product_points.product_point_report_template</field>
+      <field name="binding_model_id" ref="model_product_points" />
+    </record>
+</odoo>

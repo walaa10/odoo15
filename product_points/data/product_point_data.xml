@@ -1,0 +1,11 @@
+<odoo>
+    <record id="check_product_point_date_cron" model="ir.cron">
+        <field name="name">Product Points: check product point end date</field>
+        <field name="model_id" ref="model_product_points"/>
+        <field name="state">code</field>
+        <field name="code">model.check_end_date()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>

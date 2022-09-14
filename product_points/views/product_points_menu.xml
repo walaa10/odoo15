@@ -1,0 +1,27 @@
+<odoo>
+    <record id="product_point_action" model="ir.actions.act_window">
+        <field name="name">Product Point</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.points</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+                Create the first product point
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="product_points_root_menu"
+        name="Product Points"
+    />
+
+    <menuitem
+        id="product_points_sub_menu"
+        name="Product Points"
+        parent="product_points_root_menu"
+        action="product_point_action"
+    />
+
+
+</odoo>
