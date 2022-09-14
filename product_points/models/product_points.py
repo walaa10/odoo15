@@ -18,12 +18,12 @@ class ProductPoints(models.Model):
         ('ended', 'Ended'),
         ('cancelled', 'Cancelled')
     ], default='draft')
-    update_stage_user_id = fields.Many2one('res.users', 'Last Stage Updated By', default=lambda self: self.env.user)
+    Last_change_status_by = fields.Many2one('res.users', 'Last Stage Updated By', default=lambda self: self.env.user)
 
     def write(self, vals):
         if vals.get('state'):
             vals.update({
-                'update_stage_user_id': self.env.user.id
+                'Last_change_status_by': self.env.user.id
             })
         return super(ProductPoints, self).write(vals)
 
