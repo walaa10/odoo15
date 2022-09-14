@@ -36,7 +36,7 @@ class ProductPoints(models.Model):
     def end_date_constrains(self):
         for rec in self:
             if rec.end_date and rec.start_date > rec.end_date:
-                raise ValidationError('End Date must be greater than start date')
+                raise ValidationError('End date must be greater than start date')
 
     def action_confirm(self):
         self.state = 'confirmed'
@@ -47,11 +47,11 @@ class ProductPoints(models.Model):
     def action_draft(self):
         self.state = 'draft'
 
+    def action_end(self):
+        self.state = 'ended'
+
     def check_end_date(self):
         product_points = self.env['product.points'].search([('state', 'not in', ['ended', 'cancelled']),
                                                             ('end_date', '=', date.today())])
         for rec in product_points:
-            rec.write({
-                'state': 'ended'
-            })
-
+            rec.action_end()

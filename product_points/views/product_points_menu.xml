@@ -14,6 +14,7 @@
     <menuitem
         id="product_points_root_menu"
         name="Product Points"
+        web_icon="product_points,static/description/icon.png"
     />
 
     <menuitem

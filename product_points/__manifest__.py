@@ -3,8 +3,8 @@
     'name': "Product Points",
     'summary': """ Product Points """,
     'description': """
-        This Module Add points to each product in sale order lines 
-        and add total points in sale order 
+        This Module Add points to products in sale order lines 
+        and add total points in sale order related to the sum of each product points 
     """,
     'author': "Walaa Mustafa",
     'version': '15.0',

@@ -9,7 +9,7 @@
             </xpath>
 
             <xpath expr="//field[@name='order_line']//tree//field[@name='product_uom_qty']" position="after">
-                <field name="product_points" readonly="1"/>
+                <field name="product_points" readonly="1" force_save="1"/>
             </xpath>
         </field>
     </record>

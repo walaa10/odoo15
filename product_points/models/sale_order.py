@@ -9,7 +9,8 @@ class SaleOrderInherit(models.Model):
 
     @api.depends('order_line.product_points')
     def compute_total_points(self):
-        self.total_points = sum((self.order_line.filtered(lambda x: x.product_points)).mapped('product_points'))
+        for rec in self:
+            rec.total_points = sum((rec.order_line.filtered(lambda x: x.product_points)).mapped('product_points'))
 
 
 class SaleOrderLineInherit(models.Model):
